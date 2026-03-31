@@ -1,24 +1,11 @@
-FROM python:3.10
+FROM python:3.11-slim
 
-# Creat the working directory
 WORKDIR /app
 
-# Copy all files
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
 COPY . .
 
-#install dependencies
-Run pip install --no-cache-dir -r requiremnets.txt
-
-# Expose the Flask port
-EXPOSE 10000
-
-# Set the environment variable
-ENV PYTHONPATH=/app
-
-#Run the app
-CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:10000"]
-
-
-
-
-
+ENV PORT=10000
+CMD ["gunicorn", "-b", "0.0.0.0:$PORT", "app:app"]
