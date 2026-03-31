@@ -1,7 +1,4 @@
-flask==2.2.5
-ultralytics==8.0.20
-pillow
-torch
-torchvision
-gunicorn
-requests
+Flask==2.2.3
+numpy==1.24.3
+tensorflow==2.14.0
+Pillow==10.0.0
