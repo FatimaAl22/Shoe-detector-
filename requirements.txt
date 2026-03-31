@@ -1,0 +1,7 @@
+flask==2.2.5
+ultralytics==8.0.20
+pillow
+torch
+torchvision
+gunicorn
+requests
